@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.num1.label }}<br>
+            {{ form.num1(size=32) }}
+        </p>
+        <p>
+            {{ form.num2.label }}<br>
+            {{ form.num2(size=32) }}
+        </p>
+        <p>
+            {{ form.operation.label }}<br>
+            {{ form.operation() }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    {% if result %}
+        <h2>Result: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
